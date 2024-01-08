@@ -1,5 +1,9 @@
 package gr.aueb.ch12.bankApp;
 
+
+/**
+ * @author Grigoris
+ */
 public class Account {
     private int id;
     private String iban;
@@ -112,7 +116,7 @@ public class Account {
         }
     }
 
-    private boolean isSsnValid(String ssn) {
+    public boolean isSsnValid(String ssn) {
         return this.ssn.equals(ssn);
     }
 
