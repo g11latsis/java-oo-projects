@@ -40,6 +40,6 @@ public class Point2D extends Point {
 
     @Override
     public double getDistanceFromOrigin() {
-        return Math.sqrt(Math.pow(getX(),2) + Math.pow(getY(),2));
+        return Math.sqrt(Math.pow(getX(), 2) + Math.pow(getY(), 2));
     }
 }

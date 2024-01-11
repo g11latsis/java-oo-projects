@@ -45,7 +45,7 @@ public class Point {
         x = 0;
     }
 
-    public double getDistanceFromOrigin(){
+    public double getDistanceFromOrigin() {
         return Math.abs(x);
     }
 }
