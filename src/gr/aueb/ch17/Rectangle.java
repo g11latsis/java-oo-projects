@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Rectangle extends AbstractShape implements IRectangle, Serializable,Cloneable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 3L;
     private double width;
     private double height;
     private  transient int hashCode;

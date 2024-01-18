@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Circle extends AbstractShape implements ICircle, Serializable, Cloneable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
     private double radius;
     private  transient int hashCode;
 
