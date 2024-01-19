@@ -9,8 +9,9 @@ public interface IAccountDAO {
     Account update(Account account);
     void delete(Long id);
     Account get(Long id);
+    Account get(String iban);
     List<Account> getAll();
     boolean ibanExists(String iban);
-    boolean ssnExists(String ssn);
+    boolean userIdExists(Long id);
     void delete(String iban);
 }

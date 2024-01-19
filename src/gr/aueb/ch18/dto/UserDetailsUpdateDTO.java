@@ -1,6 +1,6 @@
 package gr.aueb.ch18.dto;
 
-public class UserDetailsUpdateDTO {
+public class UserDetailsUpdateDTO extends BaseDTO{
     private String firstname;
     private String lastname;
 

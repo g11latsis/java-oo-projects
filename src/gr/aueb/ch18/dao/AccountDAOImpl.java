@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class AccountDAOImpl implements IAccountDAO{
+public class AccountDAOImpl implements IAccountDAO {
+
+
     private static final List<Account> accounts = new ArrayList<>();
 
 
@@ -18,7 +20,7 @@ public class AccountDAOImpl implements IAccountDAO{
 
     @Override
     public Account update(Account account) {
-        return accounts.set(accounts.indexOf(account),account);
+        return accounts.set(accounts.indexOf(account), account);
     }
 
     @Override
@@ -36,6 +38,15 @@ public class AccountDAOImpl implements IAccountDAO{
     }
 
     @Override
+    public Account get(String iban) {
+        Optional<Account> account = accounts.stream()
+                .filter(a -> a.getIban().equals(iban))
+                .findFirst();
+
+        return account.orElse(null);
+    }
+
+    @Override
     public List<Account> getAll() {
         return new ArrayList<>(accounts);
     }
@@ -47,9 +58,9 @@ public class AccountDAOImpl implements IAccountDAO{
     }
 
     @Override
-    public boolean ssnExists(String ssn) {
+    public boolean userIdExists(Long id) {
         return accounts.stream()
-                .anyMatch(a -> a.getSsn().equals(ssn));
+                .anyMatch(a -> a.getId().equals(id));
     }
 
     @Override
