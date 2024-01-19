@@ -7,6 +7,11 @@ public class UserDetailsInsertDTO extends BaseDTO{
     public UserDetailsInsertDTO() {
     }
 
+    public UserDetailsInsertDTO(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     public String getFirstname() {
         return firstname;
     }

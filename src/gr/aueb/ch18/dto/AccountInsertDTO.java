@@ -1,5 +1,7 @@
 package gr.aueb.ch18.dto;
 
+import gr.aueb.ch18.model.UserDetails;
+
 public class AccountInsertDTO extends BaseDTO {
     private UserDetailsInsertDTO userDetailsInsertDTO;
     private String iban;
@@ -9,12 +11,30 @@ public class AccountInsertDTO extends BaseDTO {
     public AccountInsertDTO() {
     }
 
+    public AccountInsertDTO(UserDetailsInsertDTO userDetailsInsertDTO, String iban, String ssn, double balance) {
+        this.userDetailsInsertDTO = userDetailsInsertDTO;
+        this.iban = iban;
+        this.ssn = ssn;
+        this.balance = balance;
+    }
+
+
     public UserDetailsInsertDTO getUserDetailsInsertDTO() {
         return userDetailsInsertDTO;
     }
 
     public void setUserDetailsInsertDTO(UserDetailsInsertDTO userDetailsInsertDTO) {
         this.userDetailsInsertDTO = userDetailsInsertDTO;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountInsertDTO{" +
+                "userDetailsInsertDTO=" + userDetailsInsertDTO +
+                ", iban='" + iban + '\'' +
+                ", ssn='" + ssn + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 
     public String getIban() {
