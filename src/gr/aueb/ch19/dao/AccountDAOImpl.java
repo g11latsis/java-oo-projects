@@ -12,7 +12,7 @@ public class AccountDAOImpl implements IAccountDAO {
 
     @Override
     public Account insert(Account account) {
-        accounts.put(account.getId(),account);
+        accounts.put(account.getId(), account);
         return account;
     }
 
@@ -33,9 +33,9 @@ public class AccountDAOImpl implements IAccountDAO {
 
     @Override
     public Account get(String iban) {
-       Optional<Account> account = accounts.values().stream()
-               .filter(a -> a.getIban().equals(iban))
-               .findFirst();
+        Optional<Account> account = accounts.values().stream()
+                .filter(a -> a.getIban().equals(iban))
+                .findFirst();
 
         return account.orElse(null);
     }
@@ -59,5 +59,9 @@ public class AccountDAOImpl implements IAccountDAO {
     @Override
     public void delete(String iban) {
         accounts.values().removeIf((a -> a.getIban().equals(iban)));
+    }
+
+    public void print() {
+        accounts.forEach((k, v) -> System.out.println(k + ":" + v));
     }
 }

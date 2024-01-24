@@ -14,4 +14,5 @@ public interface IAccountDAO {
     boolean ibanExists(String iban);
     boolean userIdExists(Long id);
     void delete(String iban);
+    void print();
 }

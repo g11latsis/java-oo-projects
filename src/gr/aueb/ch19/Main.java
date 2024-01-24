@@ -23,7 +23,7 @@ public class Main {
             //Accounts insertion
             UserDetailsInsertDTO userDetailsInsertDTO = new UserDetailsInsertDTO("Grigoris", "Latsis");
             AccountInsertDTO insertedAccount = new AccountInsertDTO(userDetailsInsertDTO, "GR123456", "ABC", 12500);
-            insertedAccount.setId(1L);
+            insertedAccount.setId(1156L);
             Account account1 = accountService.insertAccount(insertedAccount);
             System.out.println("Accounts inserted: " + account1);
 
@@ -48,19 +48,21 @@ public class Main {
             System.out.println("Retrieved by id account:" + retrievedByIdAccount);
 
             //Delete account by ID
-            accountService.deleteAccountById(retrievedByIdAccount.getId());
-            System.out.println("Account with id: " + retrievedByIdAccount.getId() + " deleted");
+//            accountService.deleteAccountById(retrievedByIdAccount.getId());
+//            System.out.println("Account with id: " + retrievedByIdAccount.getId() + " deleted");
 
             //Get Account by Iban
             Account retrievedByIban = accountService.getAccount("GR15000");
             System.out.println("Retrieved by iban account: " + retrievedByIban);
 
 //            //Deleting by iban
-            accountService.deleteAccount(retrievedByIban.getIban());
-            System.out.println("Account deleted by IBAN: " + retrievedByIban.getIban());
+//            accountService.deleteAccount(retrievedByIban.getIban());
+//            System.out.println("Account deleted by IBAN: " + retrievedByIban.getIban());
 
             List<Account> allAccounts = accountService.getAllAccounts();
             System.out.println("All Accounts: " + allAccounts);
+
+            dao.print();
 
         } catch (UserIdAlreadyExistsException | IbanAlreadyExistsException | AccountNotFoundException e) {
             throw new RuntimeException(e);
